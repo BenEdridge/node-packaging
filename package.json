@@ -5,9 +5,11 @@
   "main": "app.js",
   "scripts": {
     "size": "du -sh node_modules",
+    "remove_folder": "find node_modules -name dist -type d -exec rm -rf {} \\;",
+    "minify": "npx uglifyjs-folder node_modules/** -o node_modules/ -e -x '.js'",
     "largest_files": "find node_modules/ -type f -size +100k -exec ls -lh {} \\;",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prune": "find ./node_modules -type f \\( -iname \\*.md -o -iname \\*.txt -o -iname \\*.log -o -iname \\LICENSE  -o -iname \\CHANGELOG -o -iname \\*.yml -o -iname \\*.ts -o -iname \\*.map -o -iname \\*source-map*.js \\) -delete"
+    "prune": "find ./node_modules -type f \\( -iname \\*.md -o -iname \\*.txt -o -iname \\*.log -o -iname \\LICENSE  -o -iname \\CHANGELOG -o -iname \\*.yml -o -iname \\*.ts -o -iname \\*.map -o -iname \\*source-map*.js -o -iname \\*min.js \\) -delete"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "moment": "^2.24.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "uglifyjs-folder": "^2.0.0",
     "underscore": "^1.10.2"
   },
   "devDependencies": {
