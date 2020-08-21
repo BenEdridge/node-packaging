@@ -4,6 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "rm_node_modules":"rm -rf ./node_modules",
+    "ncc": "npx @vercel/ncc build app.js -o dist",
+    "webpack": "webpack --config webpack.config.js",
     "size": "du -sh node_modules",
     "remove_folder": "find node_modules -name dist -type d -exec rm -rf {} \\;",
     "minify": "npx uglifyjs-folder node_modules/** -o node_modules/ -e -x '.js'",
@@ -35,7 +38,9 @@
   "devDependencies": {
     "chalk": "^4.0.0",
     "inquirer": "^7.1.0",
-    "webpack": "^4.42.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.1",
     "yargs": "^15.3.1"
   }
 }
