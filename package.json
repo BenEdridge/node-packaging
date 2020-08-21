@@ -1,0 +1,38 @@
+{
+  "name": "node-packaging",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "size": "du -sh node_modules",
+    "largest_files": "find node_modules/ -type f -size +100k -exec ls -lh {} \\;",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prune": "find ./node_modules -type f \\( -iname \\*.md -o -iname \\*.txt -o -iname \\*.log -o -iname \\LICENSE  -o -iname \\CHANGELOG -o -iname \\*.yml -o -iname \\*.ts -o -iname \\*.map -o -iname \\*source-map*.js \\) -delete"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenEdridge/node-packaging.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenEdridge/node-packaging/issues"
+  },
+  "homepage": "https://github.com/BenEdridge/node-packaging#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "commander": "^5.0.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "underscore": "^1.10.2"
+  },
+  "devDependencies": {
+    "chalk": "^4.0.0",
+    "inquirer": "^7.1.0",
+    "webpack": "^4.42.1",
+    "yargs": "^15.3.1"
+  }
+}
