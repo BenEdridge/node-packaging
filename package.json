@@ -7,6 +7,7 @@
     "rm_node_modules": "rm -rf ./node_modules",
     "ncc": "npx @vercel/ncc build app.js -o dist",
     "webpack": "webpack --config webpack.config.js",
+    "rollup": "rollup --config rollup.config.cjs",
     "size": "du -sh node_modules",
     "remove_folder": "find node_modules -name dist -type d -exec rm -rf {} \\;",
     "minify": "npx uglifyjs-folder node_modules/** -o node_modules/ -e -x '.js'",
@@ -39,8 +40,13 @@
     "underscore": "^1.10.2"
   },
   "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "chalk": "^4.0.0",
     "inquirer": "^7.1.0",
+    "rollup": "^2.26.4",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "terser-webpack-plugin": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-node-externals": "^2.5.1",
