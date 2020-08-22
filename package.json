@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "parcel": "parcel build app.js --no-source-maps --experimental-scope-hoisting --target node --bundle-node-modules --out-file ./dist/app.bundle-parcel.min.js",
     "rm_node_modules": "rm -rf ./node_modules",
     "ncc": "npx @vercel/ncc build app.js -o dist",
     "webpack": "webpack --config webpack.config.js",
@@ -34,13 +35,18 @@
     "google-closure-compiler": "^20200719.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "parcel-bundler": "^1.12.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "uglifyjs-folder": "^2.0.0",
     "underscore": "^1.10.2"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "builtin-modules": "^3.1.0",
     "chalk": "^4.0.0",
     "inquirer": "^7.1.0",
     "rollup": "^2.26.4",
