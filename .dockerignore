@@ -1,6 +1,7 @@
 .git
 .gitignore
 .nvmrc
+.cache
 node_modules
 app.js
 lib

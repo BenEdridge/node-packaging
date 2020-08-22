@@ -2,43 +2,39 @@
   "name": "node-packaging",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "scripts": {
-    "parcel": "parcel build app.js --no-source-maps --experimental-scope-hoisting --target node --bundle-node-modules --out-file ./dist/app.bundle-parcel.min.js",
-    "rm_node_modules": "rm -rf ./node_modules",
-    "ncc": "npx @vercel/ncc build app.js -o dist",
-    "webpack": "webpack --config webpack.config.js",
-    "rollup": "rollup --config rollup.config.cjs",
-    "size": "du -sh node_modules",
-    "remove_folder": "find node_modules -name dist -type d -exec rm -rf {} \\;",
-    "minify": "npx uglifyjs-folder node_modules/** -o node_modules/ -e -x '.js'",
-    "largest_files": "find node_modules/ -type f -size +100k -exec ls -lh {} \\;",
-    "generate:docker_image": "docker build -t node-packaging:latest .",
-    "start:docker_image": "docker run --rm -p 3000:3000 node-packaging",
-    "prune": "find ./node_modules -type f \\( -iname \\*.md -o -iname \\*.txt -o -iname \\*.log -o -iname \\LICENSE  -o -iname \\CHANGELOG -o -iname \\*.yml -o -iname \\*.ts -o -iname \\*.map -o -iname \\*source-map*.js -o -iname \\*min.js \\) -delete"
+  "homepage": "https://github.com/BenEdridge/node-packaging#readme",
+  "bugs": {
+    "url": "https://github.com/BenEdridge/node-packaging/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BenEdridge/node-packaging.git"
   },
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BenEdridge/node-packaging/issues"
+  "author": "",
+  "main": "app.js",
+  "scripts": {
+    "generate:docker_image": "docker build -t node-packaging:latest .",
+    "largest_files": "find node_modules/ -type f -size +100k -exec ls -lh {} \\;",
+    "minify": "npx uglifyjs-folder node_modules/** -o node_modules/ -e -x '.js'",
+    "ncc": "npx @vercel/ncc build app.js -o dist",
+    "parcel": "parcel build app.js --no-source-maps --experimental-scope-hoisting --target node --bundle-node-modules --out-file ./dist/app.bundle-parcel.min.js",
+    "prune": "find ./node_modules -type f \\( -iname \\*.md -o -iname \\*.txt -o -iname \\*.log -o -iname \\LICENSE  -o -iname \\CHANGELOG -o -iname \\*.yml -o -iname \\*.ts -o -iname \\*.map -o -iname \\*source-map*.js -o -iname \\*min.js \\) -delete",
+    "remove_folder": "find node_modules -name dist -type d -exec rm -rf {} \\;",
+    "rm_node_modules": "rm -rf ./node_modules",
+    "rollup": "rollup --config rollup.config.cjs",
+    "size": "du -sh node_modules",
+    "start:docker_image": "docker run --rm -p 3000:3000 node-packaging",
+    "webpack": "webpack --config webpack.config.js"
   },
-  "homepage": "https://github.com/BenEdridge/node-packaging#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "closure-webpack-plugin": "^2.3.0",
     "commander": "^5.0.0",
     "express": "^4.17.1",
-    "google-closure-compiler": "^20200719.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "parcel-bundler": "^1.12.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "uglifyjs-folder": "^2.0.0",
     "underscore": "^1.10.2"
   },
   "devDependencies": {
@@ -48,11 +44,15 @@
     "babel-minify-webpack-plugin": "^0.3.1",
     "builtin-modules": "^3.1.0",
     "chalk": "^4.0.0",
+    "closure-webpack-plugin": "^2.3.0",
+    "google-closure-compiler": "^20200719.0.0",
     "inquirer": "^7.1.0",
+    "parcel-bundler": "^1.12.4",
     "rollup": "^2.26.4",
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-uglify": "^6.0.4",
     "terser-webpack-plugin": "^4.1.0",
+    "uglifyjs-folder": "^2.0.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-node-externals": "^2.5.1",

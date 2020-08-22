@@ -56,3 +56,6 @@ node_modules/
 
 # FuseBox cache
 .fusebox/
+
+# bundler caches
+.cache
